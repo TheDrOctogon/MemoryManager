@@ -41,12 +41,19 @@ int main()
 void question1(int processes[][2])//Function for standard malloc and free
 {
   int counter=0;
+  int* buff;
+  
   for(int k = 0; k < 50; k++)//Go through all of the processes
   {
+	buff=(int*)malloc(1*processes[k][1]);
+	printf("Allocated memory of size: %d\n",processes[k][1]);
     if((counter % 50) == 0)//New process arrives every 50
     {
-		printf("New process Arrived\n");
+		//printf("New process Arrived\n");
     }
+	free(buff);
+	printf("Freed memory of size: %d\n",processes[k][1]);
 	counter++;
  }
-}
+
+ }
