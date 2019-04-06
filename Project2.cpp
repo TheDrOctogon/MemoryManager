@@ -6,13 +6,13 @@
 using namespace std;
 
 void question1(int processes[][2]);//Function for standard malloc and free
-void question2(int processes[][2]);//Function for self-made my_malloc and my_free
-void question3a(int processes[][2]);//Function for 50% memory
-void question3b(int processes[][2]);//Function for 10% memory
+//void question2(int processes[50][2]);//Function for self-made my_malloc and my_free
+//void question3a(int processes[50][2]);//Function for 50% memory
+//void question3b(int processes[]50[2]);//Function for 10% memory
 
 int main()
 {
-  int processes = [50][2];//Array to hold 50 processes, with processes burst time and memory
+  int processes[50][2];//Array to hold 50 processes, with processes burst time and memory
 
   for(int j = 0; j < 200; j++)//Go through 200 times, to get an average
   {
@@ -26,13 +26,13 @@ int main()
 
       //Generate random num for memory requirement for each process.
       //Each can have a max memory requirement of 204, so that is the upperbound.
-      processes[i][1] = rand() % 204 + 1
+      processes[i][1] = rand() % 204 + 1;
     }
 
     question1(processes);
-    question2(processes);
-    question3a(processes);
-    question3b(processes);
+    //question2(processes);
+    //question3a(processes);
+    //question3b(processes);
   }
 
   return 0;
@@ -40,12 +40,13 @@ int main()
 
 void question1(int processes[][2])//Function for standard malloc and free
 {
-  for(k = 0; k < 50; k++)//Go through all of the processes
+  int counter=0;
+  for(int k = 0; k < 50; k++)//Go through all of the processes
   {
     if((counter % 50) == 0)//New process arrives every 50
     {
-
-
+		printf("New process Arrived\n");
     }
-  }
+	counter++;
+ }
 }
