@@ -63,6 +63,7 @@ void question1(int processes[][2])//Function for standard malloc and free
 {
   int counter = 0;
   int loop = 1;
+  int buffDude;
   int* buff;
   int* buff2;
   queue <int> cycle;
@@ -83,14 +84,16 @@ void question1(int processes[][2])//Function for standard malloc and free
 	if (p1.empty() && !cycle.empty() && !mem.empty()){
 		p1.push(cycle.front());
 		cycle.pop();
-		buff = (int*) malloc(mem.front() * sizeof(int)); 
+		buffDude=mem.front();
+		buff = (int*) malloc(buffDude * sizeof(int)); 
 		mem.pop();
 	}
 	
 	if (p2.empty() && !cycle.empty() && !mem.empty()){
 		p2.push(cycle.front());
 		cycle.pop();
-		buff2 = (int*) malloc(mem.front() * sizeof(int)); 
+		buffDude=mem.front();
+		buff2 = (int*) malloc(buffDude * sizeof(int)); 
 		mem.pop();
 	}
 	
@@ -99,7 +102,7 @@ void question1(int processes[][2])//Function for standard malloc and free
      if(!p1.empty())
 	 {
 		p1.front()-= 1000000000000;
-		if(p1.front()>=0){
+		if(p1.front()<=0){
 		 p1.pop();
 		 free(buff);
 		}
@@ -107,7 +110,7 @@ void question1(int processes[][2])//Function for standard malloc and free
 	 if(!p2.empty())
 	 {
 		p2.front()-= 1000000000000;
-		if(p2.front()>=0){
+		if(p2.front()<=0){
 		 p2.pop();
 		 free(buff2);
         }
@@ -123,7 +126,8 @@ void question1(int processes[][2])//Function for standard malloc and free
     //Free the memory from the process
     //free(buff);
   }
-}; 
+ 
+ }; 
  
   
 int my_malloc(int memoryToStore, int totalMemorySize)
