@@ -26,7 +26,7 @@ int main()
   int averageTime = 0, averageTime2 = 0, averageTime3a = 0, averageTime3b = 0;//Holds average time
   int specialMemorySize = 0;//Variable to hold the special mem size for questions 3
 
-  for(int j = 0; j < 4000; j++)//Go through 4000 times, to get a good average
+  for(int j = 0; j < 12000; j++)//Go through 4000 times, to get a good average
   {
     /* initialize random seed: */
     srand(time(NULL));
@@ -44,7 +44,7 @@ int main()
       
 	
 	}
-  if(j < 1000)//First question
+  if(j < 3000)//First question
     {
       startTime = high_resolution_clock::now();
 
@@ -54,7 +54,7 @@ int main()
       auto duration = duration_cast<microseconds>( endTime - startTime ).count();
       averageTime += duration;
     }
-   else if(j < 2000 && j > 999)//Second question
+   else if(j < 6000 && j > 2999)//Second question
     {
       startTime = high_resolution_clock::now();
 
@@ -65,7 +65,7 @@ int main()
       //cout << duration2 << endl;
       averageTime2 += duration2;
     }
-	else if(j < 3000 && j > 1999)//Third question, first option
+	else if(j < 9000 && j > 5999)//Third question, first option
     {
       startTime = high_resolution_clock::now();
       specialMemorySize = (specialMemorySize * 0.5);//Only 50% memory
@@ -78,7 +78,7 @@ int main()
 
       specialMemorySize = 0;//Reset the memory size for the next program to run
     }
-    else if(j < 4000 && j > 2999)//Third question, second option
+    else if(j < 12000 && j > 8999)//Third question, second option
     {
       startTime = high_resolution_clock::now();
       specialMemorySize = (specialMemorySize * 0.1);//Only 10% memory
