@@ -93,13 +93,13 @@ int main()
     }
   }
 	cout << "\n--------Question 1--------\n";
-	cout <<"Average Time of question 1 (in microseconds): " << (averageTime / 1000) << endl;
+	cout <<"Average Time of question 1 (in microseconds): " << (averageTime / 3000) << endl;
 	cout << "\n--------Question 2--------\n";
-    cout <<"Average Time of question 2 (in microseconds): " << (averageTime2 / 1000) << endl;
+    cout <<"Average Time of question 2 (in microseconds): " << (averageTime2 / 3000) << endl;
 	cout << "\n--------Question 3a--------\n";
-    cout <<"Average Time of question 3a (in microseconds): " << (averageTime3a / 1000) << endl;
+    cout <<"Average Time of question 3a (in microseconds): " << (averageTime3a / 3000) << endl;
 	cout << "\n--------Question 3b--------\n";
-    cout <<"Average Time of question 3b (in microseconds): " << (averageTime3b / 1000) << endl;
+    cout <<"Average Time of question 3b (in microseconds): " << (averageTime3b / 3000) << endl;
 	return 0;
   }
 void question1(int processes[][2])//Function for standard malloc and free
