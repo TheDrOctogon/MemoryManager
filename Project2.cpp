@@ -123,7 +123,6 @@ void question1(int processes[][2])//Function for standard malloc and free
   while(loop==1)//Go through all of the processes
   {
     //Allocate the memory for the process
-    //buff = (int*) malloc(processes[k][1] * sizeof(int));
 	if (p1.empty() && !cycle.empty() && !mem.empty()){
 		p1.push(cycle.front());
 		cycle.pop();
@@ -166,8 +165,6 @@ void question1(int processes[][2])//Function for standard malloc and free
 	}
 		
 	counter++;//Increment the counter, as a new process comes every 50
-    //Free the memory from the process
-    //free(buff);
   }
   
  }; 
@@ -178,6 +175,7 @@ void question1(int processes[][2])//Function for standard malloc and free
   int loop = 1;
   int storedMemorySize = 0;
   int totalMemorySize = 10485750;//Total size, 10MB
+  int* bufferSize;
   int buff = 0;
   int buff2 = 0;
   queue <int> cycle;
@@ -189,11 +187,12 @@ void question1(int processes[][2])//Function for standard malloc and free
 	cycle.push(processes[k][0]);
 	mem.push(processes[k][1]);
   }
+	 
+    //Allocate the memory for the process, 10 MB
+    bufferSize = (int*) malloc(10485760 * sizeof(char));
   
   while(loop==1)//Go through all of the processes
   {
-    //Allocate the memory for the process
-    //buff = (int*) malloc(processes[k][1] * sizeof(int));
 	if (p1.empty() && !cycle.empty() && !mem.empty()){
 		p1.push(cycle.front());
 		cycle.pop();
@@ -236,9 +235,10 @@ void question1(int processes[][2])//Function for standard malloc and free
 	}
 		
 	counter++;//Increment the counter, as a new process comes every 50
-    //Free the memory from the process
-    //free(buff);
   }
+	 
+  //Free the memory from the process
+  free(bufferSize);
   
   }
  
@@ -250,6 +250,7 @@ void question1(int processes[][2])//Function for standard malloc and free
   int totalMemorySize = 10485750*.5;
   int buff = 0;
   int buff2 = 0;
+  int* bufferSize;
   int buffDude = 0;
   int allocatedMem = 0;
   queue <int> cycle;
@@ -261,6 +262,9 @@ void question1(int processes[][2])//Function for standard malloc and free
 	cycle.push(processes[k][0]);
 	mem.push(processes[k][1]);
   }
+	 
+  //Allocate the memory for the process, 10 MB
+  bufferSize = (int*) malloc(10485760 * sizeof(char));
 
   while(loop==1)//Go through all of the processes
   {
@@ -322,9 +326,10 @@ void question1(int processes[][2])//Function for standard malloc and free
 	}
 		
 	counter++;//Increment the counter, as a new process comes every 50
-    //Free the memory from the process
-    //free(buff);
   }
+	 
+  //Free the memory from the process
+  free(bufferSize);
   
   }
 
@@ -337,6 +342,7 @@ void question1(int processes[][2])//Function for standard malloc and free
   int buff = 0;
   int buff2 = 0;
   int buffDude = 0;
+  int* bufferSize;
   int allocatedMem = 0;
   queue <int> cycle;
   queue <int> mem;
@@ -347,6 +353,9 @@ void question1(int processes[][2])//Function for standard malloc and free
 	cycle.push(processes[k][0]);
 	mem.push(processes[k][1]);
   }
+	 
+  //Allocate the memory for the process, 10 MB
+  bufferSize = (int*) malloc(10485760 * sizeof(char));
 
   while(loop==1)//Go through all of the processes
   {
@@ -408,9 +417,10 @@ void question1(int processes[][2])//Function for standard malloc and free
 	}
 		
 	counter++;//Increment the counter, as a new process comes every 50
-    //Free the memory from the process
-    //free(buff);
   }
+	 
+  //Free the memory from the process
+  free(bufferSize);
   
   }  
 
